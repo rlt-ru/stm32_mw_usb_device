@@ -461,7 +461,6 @@ static void USBD_GetDescriptor(USBD_HandleTypeDef *pdev, USBD_SetupReqTypedef *r
         {
           pbuf = (uint8_t *)pdev->pClass[0]->GetHSConfigDescriptor(&len);
         }
-        pbuf[1] = USB_DESC_TYPE_CONFIGURATION;
       }
       else
       {
@@ -475,7 +474,6 @@ static void USBD_GetDescriptor(USBD_HandleTypeDef *pdev, USBD_SetupReqTypedef *r
         {
           pbuf   = (uint8_t *)pdev->pClass[0]->GetFSConfigDescriptor(&len);
         }
-        pbuf[1] = USB_DESC_TYPE_CONFIGURATION;
       }
       break;
 
@@ -633,7 +631,6 @@ static void USBD_GetDescriptor(USBD_HandleTypeDef *pdev, USBD_SetupReqTypedef *r
         {
           pbuf = (uint8_t *)pdev->pClass[0]->GetOtherSpeedConfigDescriptor(&len);
         }
-        pbuf[1] = USB_DESC_TYPE_OTHER_SPEED_CONFIGURATION;
       }
       else
       {
